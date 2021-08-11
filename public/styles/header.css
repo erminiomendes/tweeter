@@ -1,0 +1,24 @@
+#mainHeader {
+  display: flex;
+  flex-direction: column;
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  vertical-align:middle;
+  justify-content: center;
+  align-items: center;
+  background-color: #567BF5;
+  background-image: url(http://www.transparenttextures.com/patterns/back-pattern.png);
+}
+.profilePic {
+
+
+}
+
+.profileName{
+  color: #ffffff;
+}
+
+.fa-angle-double-down:hover {
+  color: #567BF5;
+}
