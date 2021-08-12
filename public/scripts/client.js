@@ -13,15 +13,14 @@ $(document).ready(function() {
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
-        console.log(tweets);
+        //console.log(tweets);
         renderTweets(tweets);
       },
       error: (err) => {
         console.err(err);
       }
     })
-  }
-
+  };
 
   const renderTweets = function(users) {
     //users = users.reverse()
@@ -63,14 +62,32 @@ $(document).ready(function() {
   fetchTweets();
 
   $('#submit-form').submit(function(event) {
+
     // prevent the default behaviour of the submit event (data submission and page refresh)
     event.preventDefault();
+    const text = $('#tweet-text').val();
+    var message = $('#messageInput').val();
+
+    if ($('#tweet-text').val().length > 140) {
+      alert("Sorry, you exceeds the 140 character limit")
+      return false;
+    } 
+
+    if ($('#tweet-text').val().length === 0 ) {
+      alert("Please, write something")
+      return false;
+    } 
     //this representa form - serialize convert obj in string
-    const serializeData = $(this).serialize(); 
-    $.post('/tweets', serializeData, (response) => {
-      console.log(response);
+    const $serializeData = $(this).serialize(); 
+
+    $.post('/tweets', $serializeData, (response) => {
+      //console.log(serializeData);
       fetchTweets();
+      $('.counter').val('140');
+      $('#tweet-text').val('');    
     });
+
+    
   });
 
 });
