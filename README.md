@@ -15,3 +15,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Change
+
+## Final Product
+
+![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/login_page.png)
+
+![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/urls_page.png)
+
+![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/edit_page.png)
