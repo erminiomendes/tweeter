@@ -29,6 +29,13 @@ $(document).ready(function() {
       $tweetsContainer.prepend(createTweetElement(user));     //prepend
     }
   };
+
+  // help function to avoid tweet with malicious code like alert();
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   
   const createTweetElement = function(tweetData) {
     const $newTweet = $(`
@@ -43,7 +50,7 @@ $(document).ready(function() {
             <a>${tweetData.user.handle}</a>
         </header>
           <div class="content">
-            <p>${tweetData.content.text}</p>
+            <p>${escape(tweetData.content.text)}</p>
           </div>
           <footer class="articleTweetFooter">
             <p> ${timeago.format(tweetData.created_at)}</p>
@@ -67,16 +74,18 @@ $(document).ready(function() {
     event.preventDefault();
     const text = $('#tweet-text').val();
     var message = $('#messageInput').val();
+    $('#alertMsg').hide("slow");
 
     if ($('#tweet-text').val().length > 140) {
-      alert("Sorry, you exceeds the 140 character limit")
+      $('#alertMsg').show("slow").text("☹️   Sorry, you exceeds the 140 character limit   ☹️");
       return false;
     } 
 
-    if ($('#tweet-text').val().length === 0 ) {
-      alert("Please, write something")
-      return false;
+    if ($('#tweet-text').val().length === 0) {
+      $('#alertMsg').show("slow").text("⚠️   Please, write something   ⚠️");
+       return false;
     } 
+
     //this representa form - serialize convert obj in string
     const $serializeData = $(this).serialize(); 
 

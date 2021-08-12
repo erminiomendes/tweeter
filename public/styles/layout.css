@@ -22,7 +22,7 @@ body {
 }
 
 .container {  
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -30,7 +30,6 @@ body {
   padding-top: 40px;
   align-content: center;
   flex-wrap: wrap;
-
 }
 
 span.bold {
@@ -45,6 +44,18 @@ span.bold {
   color: #fff;
   align-items: center;
 }
+
+#alertMsg {
+  border: 2px solid red;
+  background-color: rgb(251, 144, 144);
+  color: #fff;
+  display: none;
+  text-align: center;
+  padding: 15px;
+  font-weight: 700;
+
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
