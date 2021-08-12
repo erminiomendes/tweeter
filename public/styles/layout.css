@@ -43,6 +43,8 @@ span.bold {
   background-color: #787879;
   color: #fff;
   align-items: center;
+  font-family: 'Bungee', sans-serif;
+  text-align: center;
 }
 
 #alertMsg {
@@ -56,6 +58,3 @@ span.bold {
 
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

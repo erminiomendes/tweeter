@@ -4,16 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//$(()=>{});
-$(document).ready(function() {
 
+$(document).ready(function() {
+  // Loads tweets from - tweets Json data
   const fetchTweets = function () {
     $.ajax({
       url: '/tweets',
       method: 'GET',
       dataType: 'json',
       success: (tweets) => {
-        //console.log(tweets);
         renderTweets(tweets);
       },
       error: (err) => {
@@ -23,10 +22,11 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(users) {
-    //users = users.reverse()
-    const $tweetsContainer = $('#tweets-container'); // Select element from the DOM by id or class (CSS) 
+     // Select element from the DOM by id or class (CSS) 
+    const $tweetsContainer = $('#tweets-container'); 
     for (const user of users) {
-      $tweetsContainer.prepend(createTweetElement(user));     //prepend
+      //iterate from newest to oldestprepend to reverse our data (prepend)
+      $tweetsContainer.prepend(createTweetElement(user));     
     }
   };
 
@@ -49,25 +49,28 @@ $(document).ready(function() {
           </div>
             <a>${tweetData.user.handle}</a>
         </header>
-          <div class="content">
-            <p>${escape(tweetData.content.text)}</p>
+
+        <div class="content">
+          <p>${escape(tweetData.content.text)}</p>
+        </div>
+
+        <footer class="articleTweetFooter">
+          <p> ${timeago.format(tweetData.created_at)}</p>
+          <div>
+            <i class="fas fa-flag"></i> 
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
           </div>
-          <footer class="articleTweetFooter">
-            <p> ${timeago.format(tweetData.created_at)}</p>
-            <div>
-              <i class="fas fa-flag"></i> 
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
+        </footer>
+
       </article>
-     `);
+    `);
       
     return $newTweet;
   };
 
   fetchTweets();
-
+  // submit tweet when enter button is pressed
   $('#submit-form').submit(function(event) {
 
     // prevent the default behaviour of the submit event (data submission and page refresh)
@@ -86,16 +89,14 @@ $(document).ready(function() {
        return false;
     } 
 
-    //this representa form - serialize convert obj in string
+    //this represent form - serialize convert obj in string
     const $serializeData = $(this).serialize(); 
-
+    //Create a new tweet and call fetchTweet to render new tweet
     $.post('/tweets', $serializeData, (response) => {
-      //console.log(serializeData);
       fetchTweets();
       $('.counter').val('140');
       $('#tweet-text').val('');    
     });
-
     
   });
 

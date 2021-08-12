@@ -30,25 +30,24 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">TWEETER</span>
-      <span class="newTeet"><span class="bold">Write</span> a new tweet<br><i class="fas fa-angle-double-down"></i></span>
+      <span class="newTeet"><span class="bold">Write</span> a new tweet<br><a href="#profName"><i class="fas fa-angle-double-down"></i></a></span>
     </nav>
 
     <header id="mainHeader">
       <div class="profilePic">
           <img src="/images/profile-hex.png"> 
       </div>
-      
       <div>
-          <h2 class="profileName"><span class="bold">Emily</span> Mendes</h2>
+          <h2 class="profileName" id="profName"><span class="bold">Emily</span> Mendes</h2>
       </div>
-  </header>
+    </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <div id="alertMsg"> <i class="far fa-frown"></i> </div>
+        <div id="alertMsg"></div>
         <form id="submit-form">
-          <label for="tweet-text"><span class="bold"> What are you humming about?</span></label>
+          <label  for="tweet-text"><span class="bold"> What are you humming about?</span></label>
           <textarea name="text" id="tweet-text" class="textareaTweet"></textarea>
           <div class="buttonCounter">
             <button class="tweetButton" type="submit">Tweet</button>
@@ -56,20 +55,15 @@
           </div>
         </form>
       </section>
-      
+      <!-- DIV where will render user's tweet -->
       <div id="tweets-container"></div>
-
-
-
     </main>
-
-    <footer id="mainFooter">Erminio Mendes</footer>
+      
+    <footer id="mainFooter">Tweeter</footer>
 
     <!-- App JS --> 
-    
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
-   
 
   </body>
 </html>
