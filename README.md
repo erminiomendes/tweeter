@@ -19,8 +19,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/home_page.png)
+![screenshot tweet_home_page](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/home_page.png)
 
-![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/tweets_page.png)
+![screenshot tweets_page](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/tweets_page.png)
 
-![Getting Started](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/newTweet_page.png)
+![screenshot newTweet_page](https://raw.githubusercontent.com/erminiomendes/tweeter/master/docs/newTweet_page.png)
