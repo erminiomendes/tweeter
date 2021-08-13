@@ -1,12 +1,13 @@
 #mainHeader {
   display: flex;
   flex-direction: column;
-  margin-top: 120px;
-  height: 400px;
-  width: 100%;
   vertical-align:middle;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
+  width: 100%; 
+  margin-top: 120px;
+  height: 400px;
+  text-align: center;
   background-color: #567BF5;
   background-image: url(http://www.transparenttextures.com/patterns/back-pattern.png);
 }
